@@ -1,9 +1,9 @@
-#include "DxLib.h"
+ï»¿#include "DxLib.h"
 ////////////////////////////////////////////////////////////////
 // Bitmap Text class
 // 
-// ”š`ƒAƒ‹ƒtƒ@ƒxƒbƒg‚ª•À‚ñ‚¾ƒrƒbƒgƒ}ƒbƒv‰æ‘œ‚ğƒtƒHƒ“ƒg‚Æ‚µ‚Ä“o˜^
-// •¶š—ñ‚ğ‰æ–Ê•\¦‚·‚éƒNƒ‰ƒX
+// æ•°å­—ï½ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆãŒä¸¦ã‚“ã ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ç”»åƒã‚’ãƒ•ã‚©ãƒ³ãƒˆã¨ã—ã¦ç™»éŒ²
+// æ–‡å­—åˆ—ã‚’ç”»é¢è¡¨ç¤ºã™ã‚‹ã‚¯ãƒ©ã‚¹
 ////////////////////////////////////////////////////////////////
 
 #ifndef __BITMAPTEXT_H__
@@ -15,37 +15,37 @@ public:
 	BitmapText();
 	~BitmapText();
 
-	void          setBackGroundAlpha(bool bg_alpha_on) { m_bgalpha = bg_alpha_on; }                 // ƒtƒHƒ“ƒg”wŒi‚ğ“§‰ß‚·‚é‚©H
-	void          setFontImage(int Xnum, int Ynum, const char* fontImgfilename);                          // ƒtƒHƒ“ƒg‰æ‘œ‚æ‚èƒtƒHƒ“ƒg‚ğƒZƒbƒg‚·‚é
-	void          setFontColor(int r, int g, int b);                                                // ƒtƒHƒ“ƒgƒJƒ‰[ƒZƒbƒg
-	void          setFontColorShadow(int r, int g, int b);                                          // ‰eƒJƒ‰[‚ğƒZƒbƒg
-	void          textDrawRandom(int x, int y, char* string, int maxRand, int countDown);           // ƒ‰ƒ“ƒ_ƒ€•¶š•\¦
+	void          setBackGroundAlpha(bool bg_alpha_on) { m_bgalpha = bg_alpha_on; }                 // ãƒ•ã‚©ãƒ³ãƒˆèƒŒæ™¯ã‚’é€éã™ã‚‹ã‹ï¼Ÿ
+	void          setFontImage(int Xnum, int Ynum, const char* fontImgfilename);                          // ãƒ•ã‚©ãƒ³ãƒˆç”»åƒã‚ˆã‚Šãƒ•ã‚©ãƒ³ãƒˆã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+	void          setFontColor(int r, int g, int b);                                                // ãƒ•ã‚©ãƒ³ãƒˆã‚«ãƒ©ãƒ¼ã‚»ãƒƒãƒˆ
+	void          setFontColorShadow(int r, int g, int b);                                          // å½±ã‚«ãƒ©ãƒ¼ã‚’ã‚»ãƒƒãƒˆ
+	void          textDrawRandom(int x, int y, char* string, int maxRand, int countDown);           // ãƒ©ãƒ³ãƒ€ãƒ æ–‡å­—è¡¨ç¤º
 	
-	void          setFontShadowOffset(int ofsX, int ofsY);                                          // ‰eƒtƒHƒ“ƒgˆÊ’uƒIƒtƒZƒbƒg
-	void          textDraw(int x, int y, const char* string);                                             // ƒeƒLƒXƒg‚ğ•`‰æ
-	void          textDrawWithShadow(int x, int y, char* string);                                   // ‰e•t‚«‚ÅƒeƒLƒXƒg•`‰æ
+	void          setFontShadowOffset(int ofsX, int ofsY);                                          // å½±ãƒ•ã‚©ãƒ³ãƒˆä½ç½®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	void          textDraw(int x, int y, const char* string);                                             // ãƒ†ã‚­ã‚¹ãƒˆã‚’æç”»
+	void          textDrawWithShadow(int x, int y, char* string);                                   // å½±ä»˜ãã§ãƒ†ã‚­ã‚¹ãƒˆæç”»
 
-	void          textDrawMessage(int x, int y, const char* string, unsigned int display_lengh);          // ƒƒbƒZ[ƒW•—•\¦i•¶š”§ŒÀ‚ ‚èj
-	void          textDrawMessageWithShadow(int x, int y, char*string, unsigned int display_lengh); // ƒƒbƒZ[ƒW•—•\¦i•¶š”§ŒÀ‚ ‚èj
-	void          reMapText(const char* remapText); // ƒrƒbƒgƒ}ƒbƒv‚É•À‚ñ‚Å‚¢‚é•¶š—ñ‚ğ“ü‚ê‚ÄAƒeƒLƒXƒg‚©‚ç•¶š—ñ‚ğì‚ê‚é‚æ‚¤‚É‚·‚éBi‰Šú‰»‚Å•K—vj
+	void          textDrawMessage(int x, int y, const char* string, unsigned int display_lengh);          // ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é¢¨è¡¨ç¤ºï¼ˆæ–‡å­—æ•°åˆ¶é™ã‚ã‚Šï¼‰
+	void          textDrawMessageWithShadow(int x, int y, char*string, unsigned int display_lengh); // ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é¢¨è¡¨ç¤ºï¼ˆæ–‡å­—æ•°åˆ¶é™ã‚ã‚Šï¼‰
+	void          reMapText(const char* remapText); // ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã«ä¸¦ã‚“ã§ã„ã‚‹æ–‡å­—åˆ—ã‚’å…¥ã‚Œã¦ã€ãƒ†ã‚­ã‚¹ãƒˆã‹ã‚‰æ–‡å­—åˆ—ã‚’ä½œã‚Œã‚‹ã‚ˆã†ã«ã™ã‚‹ã€‚ï¼ˆåˆæœŸåŒ–ã§å¿…è¦ï¼‰
 
-	void          settextsize(int lx,int ly);//•`‰æ‚·‚é‚·‚×‚Ä‚ÌƒtƒHƒ“ƒgƒTƒCƒY‚Ì”{—¦•ÏX(Šg‘å‚Ì‚İ
+	void          settextsize(int lx,int ly);//æç”»ã™ã‚‹ã™ã¹ã¦ã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã®å€ç‡å¤‰æ›´(æ‹¡å¤§ã®ã¿
 
 private:
-	int           m_fontImg[256] ; // ƒtƒHƒ“ƒgƒCƒ[ƒW”z—ñ
-	int           m_fontMap[256] ; // •¶šƒ}ƒbƒv charŒ^•¶š¨ƒtƒHƒ“ƒgƒCƒ[ƒW”z—ñ“Y‚¦š”Ô†‚Ìƒ}ƒbƒsƒ“ƒO
+	int           m_fontImg[256] ; // ãƒ•ã‚©ãƒ³ãƒˆã‚¤ãƒ¡ãƒ¼ã‚¸é…åˆ—
+	int           m_fontMap[256] ; // æ–‡å­—ãƒãƒƒãƒ— charå‹æ–‡å­—â†’ãƒ•ã‚©ãƒ³ãƒˆã‚¤ãƒ¡ãƒ¼ã‚¸é…åˆ—æ·»ãˆå­—ç•ªå·ã®ãƒãƒƒãƒ”ãƒ³ã‚°
 
-	unsigned int  m_sizeX        ; // ƒtƒHƒ“ƒg1•¶š•ª‰¡ƒTƒCƒY
-	unsigned int  m_sizeY        ; // ƒtƒHƒ“ƒg1•¶š•ªcƒTƒCƒY	
-	int           text_lx        ; // ƒtƒHƒ“ƒg‰æ‘œ‚ÌI—¹ˆÊ’u(‰Šú’l‚Í1
-	int           text_ly        ; // ƒtƒHƒ“ƒg‰æ‘œ‚ÌI—¹ˆÊ’u(‰Šú’l‚Í1
-	int           m_shadowOffsetX; // ‰eƒtƒHƒ“ƒgˆÊ’uƒIƒtƒZƒbƒgX
-	int           m_shadowOffsetY; // ‰eƒtƒHƒ“ƒgˆÊ’uƒIƒtƒZƒbƒgY
-	bool          m_useflag      ; // ƒtƒHƒ“ƒgg—p‰Â”\ƒtƒ‰ƒO
-	bool          m_bgalpha      ; // •¶š”wŒi‚ğ“§‰ß‚³‚¹‚é‚©
+	unsigned int  m_sizeX        ; // ãƒ•ã‚©ãƒ³ãƒˆ1æ–‡å­—åˆ†æ¨ªã‚µã‚¤ã‚º
+	unsigned int  m_sizeY        ; // ãƒ•ã‚©ãƒ³ãƒˆ1æ–‡å­—åˆ†ç¸¦ã‚µã‚¤ã‚º	
+	int           text_lx        ; // ãƒ•ã‚©ãƒ³ãƒˆç”»åƒã®çµ‚äº†ä½ç½®(åˆæœŸå€¤ã¯1
+	int           text_ly        ; // ãƒ•ã‚©ãƒ³ãƒˆç”»åƒã®çµ‚äº†ä½ç½®(åˆæœŸå€¤ã¯1
+	int           m_shadowOffsetX; // å½±ãƒ•ã‚©ãƒ³ãƒˆä½ç½®ã‚ªãƒ•ã‚»ãƒƒãƒˆX
+	int           m_shadowOffsetY; // å½±ãƒ•ã‚©ãƒ³ãƒˆä½ç½®ã‚ªãƒ•ã‚»ãƒƒãƒˆY
+	bool          m_useflag      ; // ãƒ•ã‚©ãƒ³ãƒˆä½¿ç”¨å¯èƒ½ãƒ•ãƒ©ã‚°
+	bool          m_bgalpha      ; // æ–‡å­—èƒŒæ™¯ã‚’é€éã•ã›ã‚‹ã‹
 
-	int           isString(char c)          ; // •¶š‚ğƒCƒ[ƒW”z—ñ‚Ì“Y‚¦š‚É•ÏŠ·
-	unsigned char R, G, B;         // •¶šF 
+	int           isString(char c)          ; // æ–‡å­—ã‚’ã‚¤ãƒ¡ãƒ¼ã‚¸é…åˆ—ã®æ·»ãˆå­—ã«å¤‰æ›
+	unsigned char R, G, B;         // æ–‡å­—è‰² 
 	unsigned char m_shadow_R;
 	unsigned char m_shadow_G;
 	unsigned char m_shadow_B;

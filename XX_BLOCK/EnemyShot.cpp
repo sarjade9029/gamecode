@@ -1,50 +1,50 @@
-#include "EnemyShot.h"
+ï»¿#include "EnemyShot.h"
 void EnemyShot::Init()
 {
-	enemyShotGraph = LoadGraph("data/texture/test.png");//‰æ‘œ‚Ì“Çž
-	GetGraphSize(enemyShotGraph, &enemyShotW, &enemyShotH);//‰æ‘œ‚Ìc‰¡“Ç‚Ý‚Æ‚è
+	enemyShotGraph = LoadGraph("data/texture/test.png");//ç”»åƒã®èª­è¾¼
+	GetGraphSize(enemyShotGraph, &enemyShotW, &enemyShotH);//ç”»åƒã®ç¸¦æ¨ªèª­ã¿ã¨ã‚Š
 	speed = 5;
-	enemyShotX = 0;//À•W‚Ì‰Šú‰»
+	enemyShotX = 0;//åº§æ¨™ã®åˆæœŸåŒ–
 	enemyShotY = 0;
 	enemyShotDmg = 1;
 	angle = 0;
 	NumericAngle = 0;
-	enemyShotflag = false;//Œ‚‚Ä‚éó‘Ô‚É‚µ‚Ä‚¨‚­
+	enemyShotflag = false;//æ’ƒã¦ã‚‹çŠ¶æ…‹ã«ã—ã¦ãŠã
 	enemyShotVisibleFlag = false;
 	sectorvec = 0;
 }
 
 void EnemyShot::enemyShotSet(Player&player,Enemy&enemy)
 {
-	enemyShotX = enemy.X + (enemy.W * 0.75);//“G‚Ì’†‰›
-	enemyShotY = enemy.Y + (enemy.H * 0.75);//“G‚Ì’†‰›
+	enemyShotX = enemy.X + (enemy.W * 0.75);//æ•µã®ä¸­å¤®
+	enemyShotY = enemy.Y + (enemy.H * 0.75);//æ•µã®ä¸­å¤®
 	enemyShotX = enemyShotX - (enemyShotW * 0.5);
 	enemyShotY = enemyShotY - (enemyShotH * 0.5);
-	NumericAngle = atan2f((float)(player.Y + (player.H * 0.75) - enemyShotY), (float)(player.X + (player.W * 0.75) - enemyShotX));//ŒÂX‚Ì”’l‚ª‚¢‚©‚ê‚Ä‚¢‚é
+	NumericAngle = atan2f((float)(player.Y + (player.H * 0.75) - enemyShotY), (float)(player.X + (player.W * 0.75) - enemyShotX));//å€‹ã€…ã®æ•°å€¤ãŒã„ã‹ã‚Œã¦ã„ã‚‹
 	angle = - NumericAngle * 180 / DX_PI_F ;
 	sectorvec = enemy.sectorvec;
 	if (enemyShotflag == false && enemy.HitFlag == true)
 	{
-		enemyShotflag = true;//Œ‚‚Á‚½Œã‚Éi‚Þ‚æ‚¤‚É‚·‚é
-		enemyShotVisibleFlag = true;//Œ©‚¦‚é‚æ‚¤‚É‚·‚é
+		enemyShotflag = true;//æ’ƒã£ãŸå¾Œã«é€²ã‚€ã‚ˆã†ã«ã™ã‚‹
+		enemyShotVisibleFlag = true;//è¦‹ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
 	}
-	enemy.enemyShotintarvalcount = 30;//‘Ò‚¿ŽžŠÔ‚±‚ê‚Í“­‚¢‚Ä‚¢‚é
+	enemy.enemyShotintarvalcount = 30;//å¾…ã¡æ™‚é–“ã“ã‚Œã¯åƒã„ã¦ã„ã‚‹
 }
 
 void EnemyShot::Update(Scr&scr)
 {
 	if (enemyShotflag == true)
 	{
-		enemyShotX += cosf(NumericAngle + sectorvec) * speed;//”½•œ
+		enemyShotX += cosf(NumericAngle + sectorvec) * speed;//åå¾©
 		enemyShotY += sinf(NumericAngle + sectorvec) * speed;
 	}
-	if (/*enemyShotX > SCREEN_W + enemyShotW + scr.scrX ||*/ enemyShotX < 63 || enemyShotY < 63 /*|| enemyShotY > SCREEN_H + enemyShotH + scr.scrY*/ || enemyShotX > SCREEN_W * 2 - (enemyShotW + 64) || enemyShotY > SCREEN_H * 2 - (enemyShotH + 48) || enemyShotX < scr.scrX || enemyShotY <scr.scrY)//“®‚¢‚Ä‚¢‚È‚©‚Á‚½‚ç’e‚Ì‹““®‚ª‚¨‚©‚µ‚­‚È‚éAÁ‚¦‚È‚¢‚µ
+	if (/*enemyShotX > SCREEN_W + enemyShotW + scr.scrX ||*/ enemyShotX < 63 || enemyShotY < 63 /*|| enemyShotY > SCREEN_H + enemyShotH + scr.scrY*/ || enemyShotX > SCREEN_W * 2 - (enemyShotW + 64) || enemyShotY > SCREEN_H * 2 - (enemyShotH + 48) || enemyShotX < scr.scrX || enemyShotY <scr.scrY)//å‹•ã„ã¦ã„ãªã‹ã£ãŸã‚‰å¼¾ã®æŒ™å‹•ãŒãŠã‹ã—ããªã‚‹ã€æ¶ˆãˆãªã„ã—
 	{
-		enemyShotVisibleFlag = false;//ŠO‚Éo‚½‚çŒ©‚¦‚È‚­‚µ‚Ä
+		enemyShotVisibleFlag = false;//å¤–ã«å‡ºãŸã‚‰è¦‹ãˆãªãã—ã¦
 	}
 	if (enemyShotVisibleFlag == false)
 	{
-		enemyShotflag = false;//Œ‚‚Ä‚éó‘Ô‚É–ß‚·
+		enemyShotflag = false;//æ’ƒã¦ã‚‹çŠ¶æ…‹ã«æˆ»ã™
 	}
 }
 
@@ -52,6 +52,6 @@ void EnemyShot::Draw(Scr&scr)
 {
 	if (enemyShotVisibleFlag == true)
 	{
-		DrawRotaGraph2F(enemyShotX - scr.scrX + (enemyShotW * 0.5),enemyShotY - scr.scrY + (enemyShotH * 0.5),(enemyShotW * 0.5), (enemyShotH * 0.5),1.0,(double)NumericAngle + sectorvec,enemyShotGraph,TRUE);//•\Ž¦
+		DrawRotaGraph2F(enemyShotX - scr.scrX + (enemyShotW * 0.5),enemyShotY - scr.scrY + (enemyShotH * 0.5),(enemyShotW * 0.5), (enemyShotH * 0.5),1.0,(double)NumericAngle + sectorvec,enemyShotGraph,TRUE);//è¡¨ç¤º
 	}
 }

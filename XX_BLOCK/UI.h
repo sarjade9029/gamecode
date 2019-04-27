@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "DxLib.h"
 #include "Common.h"
 #include "target.h"
@@ -7,14 +7,14 @@ class UI
 {
 public:
 
-	int		mainmusic;							//ƒƒCƒ“‹Ç
-	int		shothit;							//ƒVƒ‡ƒbƒg‚Ì‰¹
-	int		titleGraph;							//ƒ^ƒCƒgƒ‹‰æ‘œ
-	int		endGraph;							//I‚í‚è‚Ì‰æ‘œ
-	int		framenum;							//ƒQ[ƒ€ŠJniƒ^ƒCƒgƒ‹‚©‚ç‚Å‚Í‚È‚­ƒvƒŒƒCj‚©‚ç‚ÌŠÔ
-	int		starttime;							//ƒQ[ƒ€ŠJniƒ^ƒCƒgƒ‹•Ó‚è‚©‚çj
-	int		zerotime;							//ˆê’è‚Ìƒ^ƒCƒ~ƒ“ƒO‚Å‚Æ‚é
-	int		drawtime;							//•`‰æ—p‚ÌŠÔ
+	int		mainmusic;							//ãƒ¡ã‚¤ãƒ³å±€
+	int		shothit;							//ã‚·ãƒ§ãƒƒãƒˆã®éŸ³
+	int		titleGraph;							//ã‚¿ã‚¤ãƒˆãƒ«ç”»åƒ
+	int		endGraph;							//çµ‚ã‚ã‚Šã®ç”»åƒ
+	int		framenum;							//ã‚²ãƒ¼ãƒ é–‹å§‹ï¼ˆã‚¿ã‚¤ãƒˆãƒ«ã‹ã‚‰ã§ã¯ãªããƒ—ãƒ¬ã‚¤ï¼‰ã‹ã‚‰ã®æ™‚é–“
+	int		starttime;							//ã‚²ãƒ¼ãƒ é–‹å§‹ï¼ˆã‚¿ã‚¤ãƒˆãƒ«è¾ºã‚Šã‹ã‚‰ï¼‰
+	int		zerotime;							//ä¸€å®šã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ã¨ã‚‹
+	int		drawtime;							//æç”»ç”¨ã®æ™‚é–“
 	int		waittime;
 	int     tutgraph;
 	int     tutgraph2;
@@ -27,7 +27,7 @@ public:
 	int		enemycount2;
 	int		enemycount3;
 	int		enemycount4;
-	int		cs[TARGET];							//ui—p‰æ‘œ
+	int		cs[TARGET];							//uiç”¨ç”»åƒ
 	void	Init(BitmapText & text);			//
 	void	Draw(Tg&target);					//
 

@@ -1,8 +1,8 @@
-#include "Player.h"
-//ƒvƒŒƒCƒ„[‚Ì‰Šú‰»ƒ`ƒ…[ƒgƒŠƒAƒ‹—p
+ï»¿#include "Player.h"
+//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åˆæœŸåŒ–ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ç”¨
 void Player::Init()
 {
-	//•ûŒü‚Ì‰Šú‰»
+	//æ–¹å‘ã®åˆæœŸåŒ–
 	direction = 0;
 	direction2 = 0;
 	shotIntervalCount = 15;
@@ -19,10 +19,10 @@ void Player::Init()
 	GetGraphSize(Img, &W, &H);
 }
 
-//ƒvƒŒƒCƒ„[‚ÌXV
+//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ›´æ–°
 void Player::Update(Scr&scr)
 {
-	if (shotIntervalCount != 0)//‹@”\Šm”FÏ‚İ
+	if (shotIntervalCount != 0)//æ©Ÿèƒ½ç¢ºèªæ¸ˆã¿
 	{
 		shotIntervalCount--;
 	}
@@ -43,29 +43,29 @@ void Player::Update(Scr&scr)
 		}
 	}
 
-	//¶ˆÚ“®
+	//å·¦ç§»å‹•
     if (CheckHitKey(KEY_INPUT_A) == 1)
     {
 		X -= Xs;
     }
-	//‰EˆÚ“®
+	//å³ç§»å‹•
     if (CheckHitKey(KEY_INPUT_D) == 1)
     {
 		X += Xs;
     }
-	//ãˆÚ“®
+	//ä¸Šç§»å‹•
 	if (CheckHitKey(KEY_INPUT_W) == 1)
 	{
 		Y -= Ys;
 	}
-	//‰ºˆÚ“®
+	//ä¸‹ç§»å‹•
 	if (CheckHitKey(KEY_INPUT_S) == 1)
 	{
 		Y += Ys;
 	}
 
-	//‹­§•Ç”»’è
-	if (X > SCREEN_W - (W + 15 + 64) + scr.scrX)//ŠO‚Éo‚æ‚¤‚Æ‚·‚é‚Æ–ß‚³‚ê‚é
+	//å¼·åˆ¶å£åˆ¤å®š
+	if (X > SCREEN_W - (W + 15 + 64) + scr.scrX)//å¤–ã«å‡ºã‚ˆã†ã¨ã™ã‚‹ã¨æˆ»ã•ã‚Œã‚‹
 	{
 		X = SCREEN_W - (W + 15 + 64) + scr.scrX;//
 	}
@@ -82,7 +82,7 @@ void Player::Update(Scr&scr)
 		Y = SCREEN_H - (H + 15 + 64) + scr.scrY;
 	}
 
-	//’e‚Ì”­Ë§Œä‚Æ•ûŒü‹y‚Ñ   “®ìŠm”FÏ‚İ
+	//å¼¾ã®ç™ºå°„åˆ¶å¾¡ã¨æ–¹å‘åŠã³   å‹•ä½œç¢ºèªæ¸ˆã¿
 
 	direction = 0;
 	direction2 = 0;
@@ -123,7 +123,7 @@ void Player::Update(Scr&scr)
 		direction = 6;
 		direction2 = 2;
 	}
-	//ƒVƒtƒg‚ğ‰Ÿ‚µ‚È‚ª‚ç‚È‚ç•K‚¸’e‚ªÎ‚ß‚É‚Å‚é
+	//ã‚·ãƒ•ãƒˆã‚’æŠ¼ã—ãªãŒã‚‰ãªã‚‰å¿…ãšå¼¾ãŒæ–œã‚ã«ã§ã‚‹
 	if (CheckHitKey(KEY_INPUT_LSHIFT) || CheckHitKey(KEY_INPUT_RSHIFT))
 	{
 		if (CheckHitKey(KEY_INPUT_UP))
@@ -171,7 +171,7 @@ void Player::Update(Scr&scr)
 
 }
 
-//ƒvƒŒƒCƒ„[‚Ì•`‰æ
+//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æç”»
 void Player::Draw(Scr&scr)
 {
 	if (HitFlag == true)

@@ -1,13 +1,13 @@
-#include "Enemy.h"
-//“G‚Ì‰Šú‰»
+ï»¿#include "Enemy.h"
+//æ•µã®åˆæœŸåŒ–
 void Enemy::Init()
 {
-	//“G‰æ‘œ
+	//æ•µç”»åƒ
 	Graph = LoadGraph("data/texture/redbox.png");
-	//“G‘Ì—Í
+	//æ•µä½“åŠ›
 	Life = 3;
-	//“K“–À•W
-	X = 540;//Å‰‚Ìˆê‘Ì‚ª0.0‚Éo‚é‚±‚Æ‚ÌC³AoŒ»ˆÊ’u‚Í‰æ–Ê“àH
+	//é©å½“åº§æ¨™
+	X = 540;//æœ€åˆã®ä¸€ä½“ãŒ0.0ã«å‡ºã‚‹ã“ã¨ã®ä¿®æ­£ã€å‡ºç¾ä½ç½®ã¯ç”»é¢å†…ï¼Ÿ
 	Y = 540;
 	GetGraphSize(Graph, &W, &H);
 	enemyShotintarvalcount = 30;
@@ -19,7 +19,7 @@ void Enemy::Init()
 	outside_screen = true;
 	aliveFlag = false;
 }
-//“G‚ÌXV
+//æ•µã®æ›´æ–°
 void Enemy::Update(Player&player,Scr&scr)
 {
 	if (aliveFlag == true)
@@ -27,7 +27,7 @@ void Enemy::Update(Player&player,Scr&scr)
 		HitFlag = true;
 	}
 
-	if (enemyShotintarvalcount != 0)//‹@”\Šm”FÏ‚İ
+	if (enemyShotintarvalcount != 0)//æ©Ÿèƒ½ç¢ºèªæ¸ˆã¿
 	{
 		enemyShotintarvalcount--;
 	}
@@ -76,7 +76,7 @@ void Enemy::Update(Player&player,Scr&scr)
 		}
 	}
 
-	if (X >= SCREEN_W + scr.scrX)//ƒXƒNƒŠ[ƒ“‚Ì‰E’[ŠO
+	if (X >= SCREEN_W + scr.scrX)//ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®å³ç«¯å¤–
 	{
 		outside_screen = true;
 	}
@@ -111,13 +111,13 @@ void Enemy::Update(Player&player,Scr&scr)
 		Y = SCREEN_H + 1080 - 256;
 	}
 
-	//‰æ–Ê“à
+	//ç”»é¢å†…
 	if ((X + W < SCREEN_W + scr.scrX && X > 64 + scr.scrX) && (Y > 64 + scr.scrY && Y + H < SCREEN_H + scr.scrY))
 	{
 		outside_screen = false;
 	}
 
-	//‘Ì—Í‚O‚È‚çÁ‚¦‚æ‚¤‚Ë
+	//ä½“åŠ›ï¼ãªã‚‰æ¶ˆãˆã‚ˆã†ã­
 	if (Life <= 0)
 	{
 		aliveFlag = false;
@@ -132,10 +132,10 @@ void Enemy::Update(Player&player,Scr&scr)
 		
 	}
 }
-//“G‚Ì•`‰æ
+//æ•µã®æç”»
 void Enemy::Draw(Scr&scr)
 {
-    if (aliveFlag == true)//‚±‚±‚Í“­‚¢‚Ä‚¢‚é
+    if (aliveFlag == true)//ã“ã“ã¯åƒã„ã¦ã„ã‚‹
     {
             DrawRotaGraph2F(X - scr.scrX, Y - scr.scrY,0.0,0.0,1.5,0.0, Graph, TRUE);
     }

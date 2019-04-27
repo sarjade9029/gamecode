@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "DxLib.h"
 #include "Shot.h"
 #include "Enemy.h"
@@ -10,15 +10,15 @@
 class HitCheck
 {
 public:
-	//ƒvƒŒƒCƒ„[‚Æ“G’e‚Ì“–‚½‚è”»’è
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨æ•µå¼¾ã®å½“ãŸã‚Šåˆ¤å®š
 	void hitcheck_pes(Player& player,EnemyShot& enemyshot,UI& ui);
 
-	//©’e‚Æ“G‚Ì“–‚½‚è”»’è
+	//è‡ªå¼¾ã¨æ•µã®å½“ãŸã‚Šåˆ¤å®š
 	void hitcheck_pse(Shot& shot,Enemy& enemy,UI& ui);
 
-	//©’e‚ÆƒNƒŠƒXƒ^ƒ‹‚Ì“–‚½‚è”»’è
+	//è‡ªå¼¾ã¨ã‚¯ãƒªã‚¹ã‚¿ãƒ«ã®å½“ãŸã‚Šåˆ¤å®š
 	void hitcheck_psc(Tg& target,Shot& shot,UI& ui);
 
-	//©‹@‚ÆƒNƒŠƒXƒ^ƒ‹‚Ì“–‚½‚è”»’è(–¢Š®
+	//è‡ªæ©Ÿã¨ã‚¯ãƒªã‚¹ã‚¿ãƒ«ã®å½“ãŸã‚Šåˆ¤å®š(æœªå®Œ
 	void hitcheck_pc(Tg& target,Player& player);
 };

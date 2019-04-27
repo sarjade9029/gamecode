@@ -1,5 +1,5 @@
-#include "Map.h"
-//‚±‚±‚ç•Ó‚ÍÈ—ª‚Ì—]’n‚ª‚ ‚è‚»‚¤
+ï»¿#include "Map.h"
+//ã“ã“ã‚‰è¾ºã¯çœç•¥ã®ä½™åœ°ãŒã‚ã‚Šãã†
 unsigned char tutmap[TUTMAP_HEIGHT][TUTMAP_WIDTH] =
 {
 	{2,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,3,},
@@ -61,7 +61,7 @@ unsigned char mainmap[MAINMAP_HEIGHT][MAINMAP_WIDTH] =
 
 void Map::Inittut()
 {
-	MapChip = LoadGraph("data/texture/mapchip.png");//‰æ‘œ‚Ì“Ç‚İ‚İo—ˆ‚Ä‚¢‚È‚¢‰Â”\«
+	MapChip = LoadGraph("data/texture/mapchip.png");//ç”»åƒã®èª­ã¿è¾¼ã¿å‡ºæ¥ã¦ã„ãªã„å¯èƒ½æ€§
 	for (int iy = 0; iy < TUTMAP_HEIGHT; iy++)
 	{
 		for (int ix = 0; ix < TUTMAP_WIDTH; ix++)
@@ -73,7 +73,7 @@ void Map::Inittut()
 
 void Map::InitMain()
 {
-	MapChip = LoadGraph("data/texture/mapchip.png");//‰æ‘œ‚Ì“Ç‚İ‚İo—ˆ‚Ä‚¢‚È‚¢‰Â”\«
+	MapChip = LoadGraph("data/texture/mapchip.png");//ç”»åƒã®èª­ã¿è¾¼ã¿å‡ºæ¥ã¦ã„ãªã„å¯èƒ½æ€§
 	for (int iy = 0; iy < MAINMAP_HEIGHT; iy++)
 	{
 		for (int ix = 0; ix < MAINMAP_WIDTH; ix++)
@@ -89,10 +89,10 @@ void Map::Drawtut()
 	{
 		for (int j = 0; j < TUTMAP_WIDTH; j++)
 		{
-			DrawRectGraph(j * ALLMAP_CHIP_SIZE , i * ALLMAP_CHIP_SIZE , // ‰æ–Ê‚Ì•\¦ˆÊ’u x, y
-				(datatut[i][j] % 4) * ALLMAP_CHIP_SIZE, (datatut[i][j] / 4) * ALLMAP_CHIP_SIZE,         // Œ³‰æ‘œ‚ÌØ‚èo‚µˆÊ’u x, y
-				ALLMAP_CHIP_SIZE, ALLMAP_CHIP_SIZE,         // Ø‚èo‚µƒTƒCƒY@•E‚‚³
-				MapChip, false, false);           // Œ³‰æ‘œ‚Ìƒnƒ“ƒhƒ‹A“§–¾A”½“]
+			DrawRectGraph(j * ALLMAP_CHIP_SIZE , i * ALLMAP_CHIP_SIZE , // ç”»é¢ã®è¡¨ç¤ºä½ç½® x, y
+				(datatut[i][j] % 4) * ALLMAP_CHIP_SIZE, (datatut[i][j] / 4) * ALLMAP_CHIP_SIZE,         // å…ƒç”»åƒã®åˆ‡ã‚Šå‡ºã—ä½ç½® x, y
+				ALLMAP_CHIP_SIZE, ALLMAP_CHIP_SIZE,         // åˆ‡ã‚Šå‡ºã—ã‚µã‚¤ã‚ºã€€å¹…ãƒ»é«˜ã•
+				MapChip, false, false);           // å…ƒç”»åƒã®ãƒãƒ³ãƒ‰ãƒ«ã€é€æ˜ã€åè»¢
 		}
 	}
 }
@@ -103,10 +103,10 @@ void Map::DrawMain(Scr&scr)
 	{
 		for (int j = 0; j < MAINMAP_WIDTH; j++)
 		{
-			DrawRectGraph(j * ALLMAP_CHIP_SIZE - scr.scrX, i * ALLMAP_CHIP_SIZE - scr.scrY, // ‰æ–Ê‚Ì•\¦ˆÊ’u x, y
-				(datamain[i][j] % 4) * ALLMAP_CHIP_SIZE, (datamain[i][j] / 4) * ALLMAP_CHIP_SIZE,         // Œ³‰æ‘œ‚ÌØ‚èo‚µˆÊ’u x, y
-				ALLMAP_CHIP_SIZE, ALLMAP_CHIP_SIZE,         // Ø‚èo‚µƒTƒCƒY@•E‚‚³
-				MapChip, false, false);           // Œ³‰æ‘œ‚Ìƒnƒ“ƒhƒ‹A“§–¾A”½“]
+			DrawRectGraph(j * ALLMAP_CHIP_SIZE - scr.scrX, i * ALLMAP_CHIP_SIZE - scr.scrY, // ç”»é¢ã®è¡¨ç¤ºä½ç½® x, y
+				(datamain[i][j] % 4) * ALLMAP_CHIP_SIZE, (datamain[i][j] / 4) * ALLMAP_CHIP_SIZE,         // å…ƒç”»åƒã®åˆ‡ã‚Šå‡ºã—ä½ç½® x, y
+				ALLMAP_CHIP_SIZE, ALLMAP_CHIP_SIZE,         // åˆ‡ã‚Šå‡ºã—ã‚µã‚¤ã‚ºã€€å¹…ãƒ»é«˜ã•
+				MapChip, false, false);           // å…ƒç”»åƒã®ãƒãƒ³ãƒ‰ãƒ«ã€é€æ˜ã€åè»¢
 		}
 	}
 }
