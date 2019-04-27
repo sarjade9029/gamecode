@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "DxLib.h"
 #include "Scr.h"
 #include "Common.h"
@@ -6,7 +6,7 @@
 #include "player.h"
 
 class Player;
-//Œ»óg‚¤‚à‚Ì‚µ‚©’u‚¢‚Ä‚È‚¢
+//ç¾çŠ¶ä½¿ã†ã‚‚ã®ã—ã‹ç½®ã„ã¦ãªã„
 class Shot
 {
 public:
@@ -16,24 +16,24 @@ public:
     int		Xs;
     int		Ys;
 	int		Dmg;
-	int		wite;					//Ÿ‚Ì’eŒ‚‚Â‚Ü‚Å‘Ò‚Ä‚æ
-    bool	VisibleFlag;			//•`‰æ—p
-    bool	Shotflag;               // ‚¢‚«‚Ä‚¢‚é‚½‚Ü‚©H
+	int		wite;					//æ¬¡ã®å¼¾æ’ƒã¤ã¾ã§å¾…ã¦ã‚ˆ
+    bool	VisibleFlag;			//æç”»ç”¨
+    bool	Shotflag;               // ã„ãã¦ã„ã‚‹ãŸã¾ã‹ï¼Ÿ
 
 	//shot_graph
-    int		Graph;					//‰¼‚µ‚©‚È‚¢
-    float		W;						//‰¡•
-    float		H;						//c•
+    int		Graph;					//ä»®ã—ã‹ãªã„
+    float		W;						//æ¨ªå¹…
+    float		H;						//ç¸¦å¹…
 
 	//shot_vector
-	bool	East;					//’e‚Í“Œ‚Éi‚Ş
-	bool	West;					//’e‚Í¼‚Éi‚Ş
-	bool	South;					//’e‚Í“ì‚Éi‚Ş
-	bool	North;					//’e‚Í–k‚Éi‚Ş
-	bool	directionflag;			//•ûŠpw’è
+	bool	East;					//å¼¾ã¯æ±ã«é€²ã‚€
+	bool	West;					//å¼¾ã¯è¥¿ã«é€²ã‚€
+	bool	South;					//å¼¾ã¯å—ã«é€²ã‚€
+	bool	North;					//å¼¾ã¯åŒ—ã«é€²ã‚€
+	bool	directionflag;			//æ–¹è§’æŒ‡å®š
 
 
-    void	Init();						//‰Šú‰»
+    void	Init();						//åˆæœŸåŒ–
 	void    Setshot( Player* player );
     void	Update(Scr&scr);
     void	Draw(Scr&scr);

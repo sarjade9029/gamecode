@@ -1,20 +1,20 @@
-#include "Shot.h"
+ï»¿#include "Shot.h"
 #include "HitCheck.h"
 
-//’e‚Ì‰Šú‰»
+//å¼¾ã®åˆæœŸåŒ–
 void Shot::Init()
 {
-    // ƒVƒ‡ƒbƒg‚ÌƒOƒ‰ƒtƒBƒbƒN‚ðƒƒ‚ƒŠ‚Éƒ[ƒh.
+    // ã‚·ãƒ§ãƒƒãƒˆã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚’ãƒ¡ãƒ¢ãƒªã«ãƒ­ãƒ¼ãƒ‰.
     Graph = LoadGraph("data/texture/blueshot.png");
 
 
-    // ’e‚ª‰æ–Êã‚É‘¶Ý‚µ‚Ä‚¢‚é‚©•ÛŽ‚·‚é•Ï”‚Éw‘¶Ý‚µ‚Ä‚¢‚È‚¢x‚ðˆÓ–¡‚·‚éfalse‚ð‘ã“ü‚µ‚Ä‚¨‚­
+    // å¼¾ãŒç”»é¢ä¸Šã«å­˜åœ¨ã—ã¦ã„ã‚‹ã‹ä¿æŒã™ã‚‹å¤‰æ•°ã«ã€Žå­˜åœ¨ã—ã¦ã„ãªã„ã€ã‚’æ„å‘³ã™ã‚‹falseã‚’ä»£å…¥ã—ã¦ãŠã
     VisibleFlag = false;
 	directionflag = false;
 	
 	wite = 15;
 	Dmg = 1;
-    // ’e‚ÌƒOƒ‰ƒtƒBƒbƒN‚ÌƒTƒCƒY
+    // å¼¾ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã®ã‚µã‚¤ã‚º
     GetGraphSizeF(Graph, &W, &H);
 	Ys = 10;
 	Xs = 10;
@@ -24,10 +24,10 @@ void Shot::Init()
 
 void Shot::Setshot(Player* player)
 {
-	//ƒvƒŒƒCƒ„[‚Ì‰æ‘œ‚Ì’†‰›‚ðŽæ‚é
-	//ƒvƒŒƒCƒ„[‚Ì‰¡•‚Ì’†S
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç”»åƒã®ä¸­å¤®ã‚’å–ã‚‹
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ¨ªå¹…ã®ä¸­å¿ƒ
 	X = (player->X) + (player->W*0.75);
-	//ƒvƒŒƒCƒ„[‚Ìc‚Ì’†S
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç¸¦ã®ä¸­å¿ƒ
 	Y = (player->Y) + (player->H*0.75);
 	if (Shotflag == false && player->direction != 0)
 	{
@@ -35,27 +35,27 @@ void Shot::Setshot(Player* player)
 		directionflag = true;
 		Shotflag = true;
 	}
-	//¶‚«‚Ä‚¢‚é‚È‚ç‚à‚µ‚­‚Í¶‚«•Ô‚ç‚¹‚½‚È‚ç•ûŒü‚ðŒˆ‚ß‚é
+	//ç”Ÿãã¦ã„ã‚‹ãªã‚‰ã‚‚ã—ãã¯ç”Ÿãè¿”ã‚‰ã›ãŸãªã‚‰æ–¹å‘ã‚’æ±ºã‚ã‚‹
 	if (Shotflag == true)
 	{
 		if (player->direction == 2 || player->direction2 == 2)
 		{
-			//‰æ‘œ‰ñ“]
+			//ç”»åƒå›žè»¢
 			South = true;
 		}
 		if (player->direction == 4 || player->direction2 == 4)
 		{
-			//‰æ‘œ‰ñ“]
+			//ç”»åƒå›žè»¢
 			West = true;
 		}
 		if (player->direction == 6 || player->direction2 == 6)
 		{
-			//‰æ‘œ‰ñ“]
+			//ç”»åƒå›žè»¢
 			East = true;
 		}
 		if (player->direction == 8 || player->direction2 == 8)
 		{
-			//‰æ‘œ‰ñ“]
+			//ç”»åƒå›žè»¢
 			North = true;
 		}
 		player->shotIntervalCount = wite;
@@ -63,10 +63,10 @@ void Shot::Setshot(Player* player)
 
 }
 
-//’e‚ÌXV(’e‚ÌˆÚ“®‚Æ“–‚½‚è”»’è
+//å¼¾ã®æ›´æ–°(å¼¾ã®ç§»å‹•ã¨å½“ãŸã‚Šåˆ¤å®š
 void Shot::Update(Scr&scr)
 {
-	if(directionflag == true)//“®‚¢‚Ä‚¢‚é
+	if(directionflag == true)//å‹•ã„ã¦ã„ã‚‹
 	{ 
 		if (South == true)
 		{
@@ -85,7 +85,7 @@ void Shot::Update(Scr&scr)
 			X += Xs;
 		}
 	}
-	if (X > SCREEN_W - W + scr.scrX|| X < 64 || Y < 64 || Y > SCREEN_H - H + scr.scrY || X > SCREEN_W * 2 - (W + 64) || Y > SCREEN_H * 2 - (H + 48) || X < scr.scrX || Y < scr.scrY)//“®‚¢‚Ä‚¢‚È‚©‚Á‚½‚ç’e‚Ì‹““®‚ª‚¨‚©‚µ‚­‚È‚éAÁ‚¦‚È‚¢‚µ
+	if (X > SCREEN_W - W + scr.scrX|| X < 64 || Y < 64 || Y > SCREEN_H - H + scr.scrY || X > SCREEN_W * 2 - (W + 64) || Y > SCREEN_H * 2 - (H + 48) || X < scr.scrX || Y < scr.scrY)//å‹•ã„ã¦ã„ãªã‹ã£ãŸã‚‰å¼¾ã®æŒ™å‹•ãŒãŠã‹ã—ããªã‚‹ã€æ¶ˆãˆãªã„ã—
 	{
 		VisibleFlag = false;
 	}
@@ -101,34 +101,34 @@ void Shot::Update(Scr&scr)
 	
 }
 
-//’e‚Ì•`‰æ
+//å¼¾ã®æç”»
 void Shot::Draw(Scr&scr)
 {
-	//Å‰‚Ìˆê”­‚Í‰æ‘œ‚ª‚¨‚©‚µ‚­‚È‚é‚±‚Æ‚ª‚ ‚éiŽÎ‚ß‚ð“ñ‚Â•`‰æ‚µ‚Ä‚¢‚éj
+	//æœ€åˆã®ä¸€ç™ºã¯ç”»åƒãŒãŠã‹ã—ããªã‚‹ã“ã¨ãŒã‚ã‚‹ï¼ˆæ–œã‚ã‚’äºŒã¤æç”»ã—ã¦ã„ã‚‹ï¼‰
     if (VisibleFlag == true)
     {
-        // ‰æ–Ê‚É’ei‚ð•`‰æ‚·‚é
+        // ç”»é¢ã«å¼¾iã‚’æç”»ã™ã‚‹
 		if (South || North)
 		{
 			if (!East && !West)
 			{
-				DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, 0.0,Graph, TRUE);//ã‰º
+				DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, 0.0,Graph, TRUE);//ä¸Šä¸‹
 			}
 		}
 		if (East || West)
 		{
 			if (!South && !North)
 			{
-				DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, DX_PI_F/2,Graph, TRUE);//¶‰E
+				DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, DX_PI_F/2,Graph, TRUE);//å·¦å³
 			}
 		}
 		if ((North && East) || (South && West))
 		{
-			DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, DX_PI_F/4,Graph, TRUE);//ŽÎ‚ß‰Eãor¶‰º
+			DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, DX_PI_F/4,Graph, TRUE);//æ–œã‚å³ä¸Šorå·¦ä¸‹
 		}
 		if ((North && West) || (South && East))
 		{
-			DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, DX_PI_F*1.75,Graph, TRUE);//ŽÎ‚ß¶ãor‰E‰º
+			DrawRotaGraph2F(X - scr.scrX,Y - scr.scrY,0.0,0.0,1.0, DX_PI_F*1.75,Graph, TRUE);//æ–œã‚å·¦ä¸Šorå³ä¸‹
 		}
     }
 }

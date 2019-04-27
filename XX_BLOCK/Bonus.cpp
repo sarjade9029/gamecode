@@ -1,4 +1,4 @@
-#include "Bonus.h"
+﻿#include "Bonus.h"
 void Bonus::Init()
 {
 	aliveflag = false;

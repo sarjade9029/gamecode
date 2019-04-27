@@ -1,4 +1,4 @@
-#include "Scr.h"
+﻿#include "Scr.h"
 void Scr::Init()
 {
 	scrX = 0;
@@ -6,7 +6,7 @@ void Scr::Init()
 }
 void Scr::Update(Player&player)
 {
-	if (player.Y > scrY + 720)//���ɐi
+	if (player.Y > scrY + 720)//下に進
 	{
 		if (scrY < 1096 )
 		{
@@ -20,7 +20,7 @@ void Scr::Update(Player&player)
 			scrY += (player.Y - (scrY + 360));
 		}
 	}
-	if (player.X > scrX + 1280)//�E�ɐi
+	if (player.X > scrX + 1280)//右に進
 	{
 		if (scrX < 1920 )
 		{

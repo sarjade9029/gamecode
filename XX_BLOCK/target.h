@@ -1,33 +1,33 @@
-#pragma once
+ï»¿#pragma once
 #include "DxLib.h"
 #include "Scr.h"
 class Tg
 {
 public:
-	int Thp;			//ƒ^[ƒQƒbƒg‚Ì×‚©‚¢ó‘Ô
-	int Ppt;			//ƒvƒŒƒCƒ„[‚Ìƒ|ƒCƒ“ƒg
-	int Ept;			//“G‚Ìƒ|ƒCƒ“ƒg
-	int X;				//‰¡À•W
-	int Y;				//cÀ•W
+	int Thp;			//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ç´°ã‹ã„çŠ¶æ…‹
+	int Ppt;			//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒã‚¤ãƒ³ãƒˆ
+	int Ept;			//æ•µã®ãƒã‚¤ãƒ³ãƒˆ
+	int X;				//æ¨ªåº§æ¨™
+	int Y;				//ç¸¦åº§æ¨™
 	int H;
 	int W;
 	int ux;
 	int uy;
 	int redGraph;
-	int	redGraph2;			//3’iŠK
-	int	redGraph3;			//2’iŠK
-	int	redGraph1;			//1’iŠK
+	int	redGraph2;			//3æ®µéš
+	int	redGraph3;			//2æ®µéš
+	int	redGraph1;			//1æ®µéš
 	int blueGraph;
-	int	blueGraph2;			//3’iŠK
-	int	blueGraph3;			//2’iŠK
-	int	blueGraph1;			//1’iŠK
+	int	blueGraph2;			//3æ®µéš
+	int	blueGraph3;			//2æ®µéš
+	int	blueGraph1;			//1æ®µéš
 	int grayGraph;
 	bool Visibleflag;
 	bool HitFlag;
-	bool PptFlag;			//ƒ|ƒCƒ“ƒgŠl“¾‚Ìƒtƒ‰ƒO
-	bool EptFlag;			//“G‚Ìƒ|ƒCƒ“ƒgŠl“¾‚Ìƒtƒ‰ƒO
+	bool PptFlag;			//ãƒã‚¤ãƒ³ãƒˆç²å¾—ã®ãƒ•ãƒ©ã‚°
+	bool EptFlag;			//æ•µã®ãƒã‚¤ãƒ³ãƒˆç²å¾—ã®ãƒ•ãƒ©ã‚°
 	
-	void Init();			//‰Šú‰»
-	void Update();			//XV
-	void Draw(Scr&scr);		//•`‰æ
+	void Init();			//åˆæœŸåŒ–
+	void Update();			//æ›´æ–°
+	void Draw(Scr&scr);		//æç”»
 };

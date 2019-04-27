@@ -1,22 +1,22 @@
-#include "hitcheck.h"
+ï»¿#include "hitcheck.h"
 
-//“ü‚ê‚éêŠ‚Í‚»‚ê‚¼‚êˆá‚¤
+//å…¥ã‚Œã‚‹å ´æ‰€ã¯ãã‚Œãžã‚Œé•ã†
 
 
 void HitCheck::hitcheck_pes(Player& player,EnemyShot& enemyshot,UI&ui)
 {
-	//“G’e‚ÆƒvƒŒƒCƒ„[‚ÌÀ•W
+	//æ•µå¼¾ã¨ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™
 	if (enemyshot.enemyShotVisibleFlag == true && player.HitFlag == true)
 	{
-		// ƒGƒlƒ~[‚Æ’e‚Ì“–‚½‚è”»’è
+		// ã‚¨ãƒãƒŸãƒ¼ã¨å¼¾ã®å½“ãŸã‚Šåˆ¤å®š
 		if (((enemyshot.enemyShotX > player.X && enemyshot.enemyShotX < player.X + player.W * 1.5) ||
 			(player.X > enemyshot.enemyShotX && player.X < enemyshot.enemyShotX + enemyshot.enemyShotW)) &&
 			((enemyshot.enemyShotY > player.Y && enemyshot.enemyShotY < player.Y + player.H * 1.5) ||
 			(player.Y > enemyshot.enemyShotY && player.Y < enemyshot.enemyShotY + enemyshot.enemyShotH)))
 		{
-			// ÚG‚µ‚Ä‚¢‚éê‡‚Í“–‚½‚Á‚½’e‚Ì‘¶Ý‚ðÁ‚·
+			// æŽ¥è§¦ã—ã¦ã„ã‚‹å ´åˆã¯å½“ãŸã£ãŸå¼¾ã®å­˜åœ¨ã‚’æ¶ˆã™
 			enemyshot.enemyShotVisibleFlag = false;
-			//‚±‚±‚É“Gƒ_ƒ[ƒWˆ—‚ð“ü‚ê‚é
+			//ã“ã“ã«æ•µãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†ã‚’å…¥ã‚Œã‚‹
 			player.Hp -= enemyshot.enemyShotDmg;
 			PlaySoundMem(ui.shothit, DX_PLAYTYPE_BACK);
 		}
@@ -25,7 +25,7 @@ void HitCheck::hitcheck_pes(Player& player,EnemyShot& enemyshot,UI&ui)
 
 void HitCheck::hitcheck_pse(Shot& shot,Enemy& enemy,UI&ui)
 {
-	//Ž©’e‚Æ“G‚ÌÀ•W
+	//è‡ªå¼¾ã¨æ•µã®åº§æ¨™
 	if (shot.VisibleFlag == true && enemy.HitFlag == true)
 	{
 		if (shot.East || shot.West)
@@ -37,23 +37,23 @@ void HitCheck::hitcheck_pse(Shot& shot,Enemy& enemy,UI&ui)
 					((shot.Y > enemy.Y && shot.Y < enemy.Y + enemy.H * 1.5) ||
 					(enemy.Y > shot.Y && enemy.Y < shot.Y + shot.W)))
 				{
-					// ÚG‚µ‚Ä‚¢‚éê‡‚Í“–‚½‚Á‚½’e‚Ì‘¶Ý‚ðÁ‚·
+					// æŽ¥è§¦ã—ã¦ã„ã‚‹å ´åˆã¯å½“ãŸã£ãŸå¼¾ã®å­˜åœ¨ã‚’æ¶ˆã™
 					shot.VisibleFlag = false;
-					//‚±‚±‚É“Gƒ_ƒ[ƒWˆ—‚ð“ü‚ê‚é
+					//ã“ã“ã«æ•µãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†ã‚’å…¥ã‚Œã‚‹
 					enemy.Life -= shot.Dmg;
 					PlaySoundMem(ui.shothit, DX_PLAYTYPE_BACK);
 				}
 			}
 		}
-		// ƒGƒlƒ~[‚Æ’e‚Ì“–‚½‚è”»’è
+		// ã‚¨ãƒãƒŸãƒ¼ã¨å¼¾ã®å½“ãŸã‚Šåˆ¤å®š
 		if (((shot.X > enemy.X && shot.X < enemy.X + enemy.W * 1.5) ||
 			(enemy.X > shot.X && enemy.X < shot.X + shot.W)) &&
 			((shot.Y > enemy.Y && shot.Y < enemy.Y + enemy.H * 1.5) ||
 			(enemy.Y > shot.Y && enemy.Y < shot.Y + shot.H)))
 		{
-			// ÚG‚µ‚Ä‚¢‚éê‡‚Í“–‚½‚Á‚½’e‚Ì‘¶Ý‚ðÁ‚·
+			// æŽ¥è§¦ã—ã¦ã„ã‚‹å ´åˆã¯å½“ãŸã£ãŸå¼¾ã®å­˜åœ¨ã‚’æ¶ˆã™
 			shot.VisibleFlag = false;
-			//‚±‚±‚É“Gƒ_ƒ[ƒWˆ—‚ð“ü‚ê‚é
+			//ã“ã“ã«æ•µãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†ã‚’å…¥ã‚Œã‚‹
 			enemy.Life -= shot.Dmg;
 			PlaySoundMem(ui.shothit, DX_PLAYTYPE_BACK);
 		}
@@ -64,15 +64,15 @@ void HitCheck::hitcheck_psc(Tg& target, Shot&shot,UI&ui)
 {
 	if (shot.VisibleFlag == true && target.Thp < 4)
 	{
-		// ƒ^[ƒQƒbƒg‚ÆŽ©’e‚Ì“–‚½‚è”»’è
+		// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨è‡ªå¼¾ã®å½“ãŸã‚Šåˆ¤å®š
 		if (((shot.X > target.X && shot.X < target.X + target.W * 1.55) ||
 			(target.X > shot.X && target.X < shot.X + shot.W)) &&
 			((shot.Y > target.Y && shot.Y < target.Y + target.H * 1.55) ||
 			(target.Y > shot.Y && target.Y < shot.Y + shot.H)))
 		{
-			// ÚG‚µ‚Ä‚¢‚éê‡‚Í“–‚½‚Á‚½’e‚Ì‘¶Ý‚ðÁ‚·
+			// æŽ¥è§¦ã—ã¦ã„ã‚‹å ´åˆã¯å½“ãŸã£ãŸå¼¾ã®å­˜åœ¨ã‚’æ¶ˆã™
 			shot.VisibleFlag = false;
-			//‚±‚±‚ÉƒNƒŠƒXƒ^ƒ‹ƒ_ƒ[ƒWˆ—‚ð“ü‚ê‚éF‚Ì•ÏX‚Ítarget.update‚É‚ ‚é
+			//ã“ã“ã«ã‚¯ãƒªã‚¹ã‚¿ãƒ«ãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†ã‚’å…¥ã‚Œã‚‹è‰²ã®å¤‰æ›´ã¯target.updateã«ã‚ã‚‹
 			target.Thp += shot.Dmg;
 		}
 	}
@@ -82,14 +82,14 @@ void HitCheck::hitcheck_pc(Tg& target, Player&player)
 {
 	if (player.HitFlag == true && target.Thp < 5)
 	{
-		// ƒ^[ƒQƒbƒg‚ÆŽ©’e‚Ì“–‚½‚è”»’è
+		// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨è‡ªå¼¾ã®å½“ãŸã‚Šåˆ¤å®š
 		if (((player.X > target.X && player.X < target.X + target.W * 1.55) ||
 			(target.X > player.X && target.X < player.X + player.W * 1.5)) &&
 			((player.Y > target.Y && player.Y < target.Y + target.H * 1.55) ||
 			(target.Y > player.Y && target.Y < player.Y + player.H * 1.5)))
 		{
-			//ÚG‚µ‚Ä‚¢‚é‚¾‚¯,hp‚Æˆø‚«Š·‚¦‚É‘ŠŽè‚Éƒ_ƒ[ƒWH
-			//‚±‚±‚ÅŽ~‚ß‚é‚È‚è–ß‚·‚È‚è‚·‚é
+			//æŽ¥è§¦ã—ã¦ã„ã‚‹ã ã‘,hpã¨å¼•ãæ›ãˆã«ç›¸æ‰‹ã«ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼Ÿ
+			//ã“ã“ã§æ­¢ã‚ã‚‹ãªã‚Šæˆ»ã™ãªã‚Šã™ã‚‹
 			if (player.X > target.X && player.X <= target.X + target.W * 1.55)
 			{
 				player.X = target.X + target.W * 1.55 + 7;

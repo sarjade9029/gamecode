@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "DxLib.h"
 #include "Scr.h"
 #define TUTMAP_WIDTH       30

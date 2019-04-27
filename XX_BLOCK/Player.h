@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Shot.h"
 #include "Scr.h"
 #include "DxLib.h"
@@ -7,22 +7,22 @@
 class Player
 {
 public:
-	int		direction;					//’e‚Ì•ûŒü«
-	int		direction2;					//’e‚Ì•ûŒü«Î‚ß—p
-	int		shotIntervalCount;			//‘O‰ñ‘Å‚Á‚½’e‚ğ‚à‚Æ‚É¡Œ‚‚Á‚Ä‚¢‚¢‚©
-    int		Hp;							//‘Ì—Í
-	int		W;							//‰¡•
-	int		H;							//c•
-    int		Xs;							//‰¡‘¬“x
-    int		Ys;							//c‘¬“x
-    int		Img;						//‰æ‘œ
+	int		direction;					//å¼¾ã®æ–¹å‘æ€§
+	int		direction2;					//å¼¾ã®æ–¹å‘æ€§æ–œã‚ç”¨
+	int		shotIntervalCount;			//å‰å›æ‰“ã£ãŸå¼¾ã‚’ã‚‚ã¨ã«ä»Šæ’ƒã£ã¦ã„ã„ã‹
+    int		Hp;							//ä½“åŠ›
+	int		W;							//æ¨ªå¹…
+	int		H;							//ç¸¦å¹…
+    int		Xs;							//æ¨ªé€Ÿåº¦
+    int		Ys;							//ç¸¦é€Ÿåº¦
+    int		Img;						//ç”»åƒ
 	int		witetime;					
-	int		score;						//ƒXƒRƒA
-	int		plscore;					//•\¦‚³‚ê‚éƒXƒRƒA
-	int		addcounter;					//q‹@‚Ì”
+	int		score;						//ã‚¹ã‚³ã‚¢
+	int		plscore;					//è¡¨ç¤ºã•ã‚Œã‚‹ã‚¹ã‚³ã‚¢
+	int		addcounter;					//å­æ©Ÿã®æ•°
     float	X;							//
     float	Y;							//
-	bool	scoreflag;					//ƒXƒRƒAƒCƒ“ƒNƒŠƒƒ“ƒgŒvZ—p
+	bool	scoreflag;					//ã‚¹ã‚³ã‚¢ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆè¨ˆç®—ç”¨
 	bool	HitFlag;					
     void	Init();						//
     void	Update(Scr&scr);			//

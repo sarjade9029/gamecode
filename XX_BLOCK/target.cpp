@@ -1,7 +1,7 @@
-#include "target.h"
+ï»¿#include "target.h"
 void Tg::Init()
 {
-	//‰Šú‰»
+	//åˆæœŸåŒ–
 	redGraph = LoadGraph("data/texture/redtarget.png");
 	redGraph2 = LoadGraph("data/texture/redtarget2.png");
 	redGraph3 = LoadGraph("data/texture/redtarget3.png");
@@ -14,7 +14,7 @@ void Tg::Init()
 	Thp = -5;
 	Ppt = 0;
 	Ept = 0;
-	X = 0;//ŒÅ’èˆÊ’ul‚©Š‹­§
+	X = 0;//å›ºå®šä½ç½®å››ã‹æ‰€å¼·åˆ¶
 	Y = 0;
 	ux = 0;
 	uy = 0;
@@ -27,10 +27,10 @@ void Tg::Update()
 {
 	if (Thp >= 1)
 	{
-		//ƒNƒŠƒXƒ^ƒ‹‚ÌF•ÏXiÂj
+		//ã‚¯ãƒªã‚¹ã‚¿ãƒ«ã®è‰²å¤‰æ›´ï¼ˆé’ï¼‰
 		if (Thp > 4)
 		{
-			Thp = 4;//ÂF
+			Thp = 4;//é’è‰²
 		}
 		PptFlag = true;	
 	}
@@ -40,7 +40,7 @@ void Tg::Update()
 	}
 	if (Thp == 0)
 	{
-		//ƒNƒŠƒXƒ^ƒ‹‚ÌFiƒŠƒZƒbƒgj
+		//ã‚¯ãƒªã‚¹ã‚¿ãƒ«ã®è‰²ï¼ˆãƒªã‚»ãƒƒãƒˆï¼‰
 		PptFlag = false;
 		EptFlag = false;
 	}
@@ -50,10 +50,10 @@ void Tg::Update()
 	}
 	if (Thp <= -1)
 	{
-		//ƒNƒŠƒXƒ^ƒ‹‚ÌF•ÏXiÔj
+		//ã‚¯ãƒªã‚¹ã‚¿ãƒ«ã®è‰²å¤‰æ›´ï¼ˆèµ¤ï¼‰
 		if (Thp < -4)
 		{
-			Thp = -4;//ÔF
+			Thp = -4;//èµ¤è‰²
 		}
 		EptFlag = true;
 	}
@@ -61,10 +61,10 @@ void Tg::Update()
 
 void Tg::Draw(Scr&scr)
 {
-	//ƒNƒŠƒXƒ^ƒ‹‚Ì•`‰æ
+	//ã‚¯ãƒªã‚¹ã‚¿ãƒ«ã®æç”»
 	if (Thp != 0)
 	{
-		//Â•\¦
+		//é’è¡¨ç¤º
 
 		if (PptFlag == true)
 		{
@@ -83,7 +83,7 @@ void Tg::Draw(Scr&scr)
 			DrawRotaGraph2F(X - scr.scrX, Y - scr.scrY, 0.0, 0.0, 1.55, 0.0, blueGraph1, TRUE);
 		}
 
-		//Ô•\¦
+		//èµ¤è¡¨ç¤º
 		if (EptFlag == true)
 		{
 			DrawRotaGraph2F(X - scr.scrX, Y - scr.scrY, 0.0, 0.0, 1.55, 0.0, redGraph, TRUE);
@@ -106,17 +106,17 @@ void Tg::Draw(Scr&scr)
 		DrawRotaGraph2F(X - scr.scrX, Y - scr.scrY, 0.0, 0.0, 1.55, 0.0, grayGraph, TRUE);
 	}
 
-	//32*i+1=Š´Šo‚ğ“¥‚Ü‚¦‚½’l
-	//ŠÔŠuŠJ‚¯‚Ì‚½‚ß‚Ì”š
-	//1920-128=•`‰æˆÊ’u
-	//“¯Šú‚ÍŒÂX‚Ìhp‚Æ‡‚í‚¹‚ê‚Î‚¢‚¢
-	//Ä“x¬‚³‚¢‚à‚Ì‚ğ•`‰æ
-	//•`‰æ‚Ì–â‘è
+	//32*i+1=æ„Ÿè¦šã‚’è¸ã¾ãˆãŸå€¤
+	//é–“éš”é–‹ã‘ã®ãŸã‚ã®æ•°å­—
+	//1920-128=æç”»ä½ç½®
+	//åŒæœŸã¯å€‹ã€…ã®hpã¨åˆã‚ã›ã‚Œã°ã„ã„
+	//å†åº¦å°ã•ã„ã‚‚ã®ã‚’æç”»
+	//æç”»ã®å•é¡Œ
 	
 
 	if (Thp != 0)
 	{
-		//Â•\¦
+		//é’è¡¨ç¤º
 		if (PptFlag == true)
 		{
 			DrawRotaGraph2F(ux, uy, 0.0, 0.0, 1.55, 0.0, blueGraph, TRUE);
@@ -134,7 +134,7 @@ void Tg::Draw(Scr&scr)
 			DrawRotaGraph2F(ux, uy, 0.0, 0.0, 1.55, 0.0, blueGraph1, TRUE);
 		}
 
-		//Ô•\¦
+		//èµ¤è¡¨ç¤º
 		if (EptFlag == true)
 		{
 			DrawRotaGraph2F(ux, uy, 0.0, 0.0, 1.55, 0.0, redGraph, TRUE);

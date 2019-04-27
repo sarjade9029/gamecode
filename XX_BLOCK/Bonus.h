@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Dxlib.h"
 #include "target.h"
 
@@ -6,15 +6,15 @@ class Bonus
 {
 public:
 
-	int point;						//ƒXƒRƒA‰ÁZ
+	int point;						//ã‚¹ã‚³ã‚¢åŠ ç®—
 
-	bool aliveflag;					//ğŒ‚ª‚»‚ë‚Á‚½‚ç
+	bool aliveflag;					//æ¡ä»¶ãŒãã‚ã£ãŸã‚‰
 
 	bool blueflag;
 	bool blueflag2;
 	bool blueflag3;
 	bool blueflag4;
 
-	void Init();					//‰Šú‰»
-	void Update(Player&player);		//‚ ‚Õ‚Å
+	void Init();					//åˆæœŸåŒ–
+	void Update(Player&player);		//ã‚ã·ã§
 };
